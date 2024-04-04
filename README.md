@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# Desafio Supliu
+## Requisitos
+ * [Node 20.12.0+](https://nodejs.org/en)
+ * [npm 10.5.0+](https://www.npmjs.com/)
+ * [React 18.2.0](https://react.dev/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Funcionalidades
 
-## Available Scripts
+* ### Páginas
+Existem ao todo 3 Páginas: 
+1. ```/``` - **Início** : Exibe uma breve introdução e todos os álbuns com seus detalhes por meio de scroll infinito, também é possível visualizar todas as faixas de cada álbum;
+1. ```/albuns``` - **Gerenciar Álbuns**: Permite listar todos os álbuns já cadastrados, organizar a lista, pesquisar pelo nome, adicionar um novo álbum, editar e remover. Além disso, também é possível adicionar ou remover faixas dos álbuns;
+1. ```/faixas``` - **Gerenciar Faixas**: Permite listar todas as faixas já cadastradas, organizar a lista, pesquisar pelo nome, adicionar uma nova faixa (que deve ser atribuída a, pelo menos, um álbum), editar e remover.
 
-In the project directory, you can run:
+* ### Validação dos dados:
+Os formulários são validados por meio do próprio HTML. O React Bootstrap facilita a integração desses recursos de validação HTML5 em componentes, permitindo utilizar os mesmos atributos e comportamentos que teria em um formulário HTML regular, mas com a conveniência e a estilização adicionais fornecidas pelos componentes do Bootstrap.
 
-### `npm start`
+ ###### Álbum
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. ```nome```: Required|String|Unique|Max:100;
+1. ```ano```: Required|Integer|Digits:4;
+1. ```imagem```: String;
+1. ```spotify_link```: String.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+ ###### Faixa
 
-### `npm test`
+1. ```nome```: Required|String|Unique|Max:100;
+1. ```duracao```: Required; (Formato ``mm:ss`` - Ex.: 05:20)
+1. ```spotify_link```: String.
+1. ```albuns```: Required|Array. (Checkbox)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Instalação
+* ### Node
+Baixar e instalar o [Node.JS](https://nodejs.org/en).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Configuração
+* #### Dependências
+Instale as dependências com ```npm install```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* #### Configurar a URL da API
+No arquivo ```\src\context\GlobalContext.js``` edite a URL caso seja necessário:
+```bash
+const apiURL = "http://URL_DA_API/api/";
+```
+* ### Iniciar servidor: `npm start`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Bibliotecas Externas 
+* #### [Jquery](https://github.com/jquery/jquery) - [Jquery Mask Plugin](https://github.com/igorescobar/jQuery-Mask-Plugin)
+* #### [React Bootstrap](https://github.com/react-bootstrap/react-bootstrap)
+* #### [Axios](https://github.com/axios/axios)

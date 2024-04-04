@@ -86,9 +86,10 @@ export const FaixaProvider = ({children}) => {
     const storeFaixa = async(e)=>{
         e.preventDefault();
         try{
-            formFieldsSave.duracao = minToMs(formFieldsSave.duracao);
+            let formModificado = {...formFieldsSave}
+            formModificado.duracao = minToMs(formFieldsSave.duracao);
             setLoading(true);
-            let resposta = await axios.post("faixas", formFieldsSave,{headers: {'Content-Type': 'multipart/form-data'}});
+            let resposta = await axios.post("faixas", formModificado,{headers: {'Content-Type': 'multipart/form-data'}});
             setFormFieldsSave({ nome: "", duracao: "", spotify_link: "", 'albuns[]': []});
             getFaixas(formFieldsPagination['nome'], 1);
             setLoading(false);
@@ -97,7 +98,6 @@ export const FaixaProvider = ({children}) => {
             }
             handleButtonClick("lista")
         }catch(e){
-            formFieldsSave.duracao = msToMin(formFieldsSave.duracao);
             setLoading(false);
             if(e.response)
                 if(e.response.status !== 200){
@@ -114,7 +114,6 @@ export const FaixaProvider = ({children}) => {
             formModificado.duracao = minToMs(formFieldsUpdate.duracao);
             setLoading(true);
             let resposta = await axios.post("faixas/"+formModificado.id, formModificado,{headers: {'Content-Type': 'multipart/form-data'}});
-           
             setLoading(false);
             getFaixas(formFieldsPagination['nome']);
             if(resposta.data.message){

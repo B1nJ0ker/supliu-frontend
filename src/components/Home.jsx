@@ -33,13 +33,12 @@ export const Home = ()=>{
 
     useEffect(() => {
         const handleScroll = () => {
-            if (
-                window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight && !loading
-            ) {
+            if ( window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight && !loading ){
                 getAlbunsOnDemand();
+                window.scrollTo(0, document.documentElement.offsetHeight - 1100);
             }
+            
         };
-
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, [loading]);

@@ -29,7 +29,7 @@ export const FaixaCreate = ()=>{
 
     useEffect(()=>{
         getAlbuns();
-        $(duracaoRef.current).mask('00:00');
+        $(duracaoRef.current).mask('00:99');
     }, []);
 
     useEffect(()=>{
@@ -49,7 +49,7 @@ export const FaixaCreate = ()=>{
             <Row className="mb-3">
                 <Form.Group as={Col} controlId="duracao">
                     <FloatingLabel label="Duração" className="mb-3">
-                        <Form.Control ref={duracaoRef} pattern="^(\d{1,2}(:\d{0,2})?)?$" required name="duracao" value={formFieldsSave['duracao']} onChange={onChangeSaveForm} type="text"/>
+                        <Form.Control ref={duracaoRef} pattern="^([0-5]?[0-9]:[0-5]?[0-9])?$" required name="duracao" value={formFieldsSave['duracao']} onChange={onChangeSaveForm} type="text"/>
                     </FloatingLabel>
                 </Form.Group>
                 <Form.Group as={Col} controlId="spotify_link">
