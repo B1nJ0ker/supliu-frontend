@@ -22,7 +22,7 @@ export const FaixaIndex = ()=>{
                     <h1>Nova Faixa</h1>
                    <FaixaCreate />
                 </Tab>
-                <Tab eventKey="editarFaixa" title="Editar" disabled>
+                <Tab eventKey="editar" title="" disabled>
                     <h1>Editar Faixa</h1>
                     <FaixaEdit/> 
                 </Tab>

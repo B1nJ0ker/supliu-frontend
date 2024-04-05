@@ -45,8 +45,14 @@ export const GlobalProvider = ({children}) => {
         setFormFieldsPesquisa({...formFieldsPesquisa, [name]: value});
     }
 
-    const handleTabChange = (key) => {setActiveKey(key);};
-    const handleButtonClick = (tab) => { setActiveKey(tab);};
+    const handleTabChange = (key) => {
+        setActiveKey(key);
+        document.getElementById('tabs-tab-editar').innerHTML = key === "editar" ? "Editar" : "";
+    };
+    const handleButtonClick = (tab) => { 
+        setActiveKey(tab); 
+        document.getElementById('tabs-tab-editar').innerHTML = tab === "editar" ? "Editar" : "";
+    };
 
     return <GlobalContext.Provider 
         value={{ 

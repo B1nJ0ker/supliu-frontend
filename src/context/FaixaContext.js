@@ -44,7 +44,7 @@ export const FaixaProvider = ({children}) => {
         });
         faixa['_method'] = "PUT";
         setFormFieldsUpdate(faixa);
-        handleButtonClick("editarFaixa");
+        handleButtonClick("editar");
     }
 
     const onChangeUpdateForm = (e) =>{

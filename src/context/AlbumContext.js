@@ -25,7 +25,7 @@ export const AlbumProvider = ({children}) => {
 
     const updateFormAlbum = (album) =>{
         setFormFieldsUpdate(album);
-        handleButtonClick("editarAlbum");
+        handleButtonClick("editar");
         setFaixas([]);
         if(  document.getElementById('accordionFaixas').children[0].ariaExpanded === "true"){
             document.getElementById('accordionFaixas').children[0].click();

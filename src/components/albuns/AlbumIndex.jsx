@@ -25,7 +25,7 @@ export const AlbumIndex = ()=>{
                     <h1>Novo Álbum</h1>
                     <AlbumCreate />
                 </Tab>
-                <Tab eventKey="editarAlbum" title="Editar" disabled>
+                <Tab eventKey="editar" title="" disabled>
                     <h1>Editar Álbum</h1>
                     <AlbumEdit />
                 </Tab>
